@@ -10,15 +10,22 @@ class Animal {
   }
 
   mostrarAtributos(){
-    return this.atributos();
+    try{
+      return this.atributos()
+    } catch (erro){
+      console.log(erro.message)
+    }
   } 
 
   atributos() {
-    return {
-      nome: this.nome,
-      idade: this.idade,
-      especie: this.especie
-    };
+    if (this.nome != "" && this.idade != "" && this.especie != ""){
+      return {
+        nome: this.nome,
+        idade: this.idade,
+        especie: this.especie
+      } } else {
+        throw new Error("Está faltando nome e/ou idade e/ou especie. ;)")
+      }
   }
 }
 
@@ -26,7 +33,7 @@ const meuAnimal = new Animal("Fido", 3, "cachorro");
 const atributos = meuAnimal.mostrarAtributos();
 
 // Imprimindo os atributos
-console.log(atributos.nome);   
+/* console.log(atributos.nome);   
 console.log(atributos.idade);  
-console.log(atributos.especie); 
+console.log(atributos.especie);  */
 
