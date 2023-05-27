@@ -13,7 +13,7 @@ class Estudante {
     try{
       return this.atributos();
     } catch(erro){
-      console.log(erro.name)
+      console.log(erro.message)
     }
   }
 
@@ -30,7 +30,6 @@ class Estudante {
 }
 
 const estudante = new Estudante("João", 16, "3A");
-
 const atributos = estudante.mostrarAtributos();
 
 /* console.log(atributos.nome);   
