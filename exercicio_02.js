@@ -10,15 +10,22 @@ class Estudante {
   }
 
   mostrarAtributos() {
-    return this.atributos();
+    try{
+      return this.atributos();
+    } catch(erro){
+      console.log(erro.name)
+    }
   }
 
   atributos() {
-    return {
-      nome: this.nome,
-      idade: this.idade,
-      turma: this.turma
-    };
+    if (this.nome != "" && this.idade != "" && this.turma != ""){
+      return {
+        nome: this.nome,
+        idade: this.idade,
+        turma: this.turma
+      } } else{
+        throw new Error("Está faltando nome e/ou idade e/ou turma. ;)")
+      }
   }
 }
 
@@ -26,7 +33,7 @@ const estudante = new Estudante("João", 16, "3A");
 
 const atributos = estudante.mostrarAtributos();
 
-console.log(atributos.nome);   
+/* console.log(atributos.nome);   
 console.log(atributos.idade);  
-console.log(atributos.turma); 
+console.log(atributos.turma);  */
 
