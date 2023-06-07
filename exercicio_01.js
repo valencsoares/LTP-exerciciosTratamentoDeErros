@@ -1,6 +1,12 @@
 /*
   Os atributos nomes, idade e especie são todos necessários. Assim, usando Try e Catch trate os erros e apresente uma mensagem de erro quando houve atributos vazios.
 */
+class DeuErrado extends Error {
+  constructor(mensagem){
+    super(mensagem);
+    this.name = "Meu Erro";
+  }
+}
 
 class Animal {
   constructor(nome, idade, especie) {
@@ -24,7 +30,7 @@ class Animal {
         idade: this.idade,
         especie: this.especie
       } } else {
-        throw new Error("Está faltando nome e/ou idade e/ou especie. ;)")
+        throw new DeuErrado("Está faltando nome e/ou idade e/ou especie. ;)")
       }
   }
 }

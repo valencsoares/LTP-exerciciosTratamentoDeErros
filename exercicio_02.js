@@ -1,6 +1,9 @@
-/*
-  Todos os atributos necessários. Assim, usando Try e Catch, trate os erros e apresente uma mensagem quando houve atributos vazios.
-*/
+class DeuErrado extends Error {
+  constructor(mensagem){
+    super(mensagem);
+    this.name = "Meu Erro";
+  }
+}
 
 class Estudante {
   constructor(nome, idade, turma) {
@@ -24,7 +27,7 @@ class Estudante {
         idade: this.idade,
         turma: this.turma
       } } else{
-        throw new Error("Está faltando nome e/ou idade e/ou turma. ;)")
+        throw new DeuErrado("Está faltando nome e/ou idade e/ou turma. ;)")
       }
   }
 }

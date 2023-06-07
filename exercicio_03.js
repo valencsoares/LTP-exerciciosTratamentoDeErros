@@ -1,3 +1,10 @@
+class DeuErrado extends Error {
+  constructor(mensagem){
+    super(mensagem);
+    this.name = "Meu Erro";
+  }
+}
+
 class NerdIF {
   constructor(estudante, cosplay, nota_cosplay) {
     this.estudante = estudante;
@@ -20,7 +27,7 @@ class NerdIF {
         cosplay: this.cosplay,
         nota_cosplay: this.nota_cosplay
       } } else {
-        throw new Error("Está faltando informar o estudante e/ou o cosplay e/ou a nota do cosplay. :b")
+        throw new DeuErrado("Está faltando informar o estudante e/ou o cosplay e/ou a nota do cosplay. :b")
       }
   }
 }
