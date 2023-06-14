@@ -43,3 +43,4 @@ const atributos = meuAnimal.mostrarAtributos();
 console.log(atributos.idade);  
 console.log(atributos.especie);  */
 
+/* quem lança o erro não mostra, quem mostra o erro não lança */
